@@ -2,31 +2,25 @@
 .. _reference/assets:
 
 ======
-Assets
+资产（静态资源）
 ======
 
-Managing assets in Odoo is not as straightforward as it is in some other apps.
-One of the reasons is that we have a variety of situations where some, but not all
-of the assets are required. For example, the needs of the web client, the point of
-sale app, the website or even the mobile application are different. Also, some
-assets may be large, but are seldom needed: in that case we may want them
-to be :ref:`loaded lazily (on demand) <frontend/assets/lazy_loading>`.
 
-Asset types
+在 Odoo 中管理资产并不像在其他一些应用程序中那样简单。原因之一是我们有多种情况需要一些但不是全部资产。
+例如，网络客户端、销售点应用程序、网站甚至移动应用程序的需求是不同的。
+此外，一些资产可能很大，但很少需要：在这种情况下，我们可能希望它们被:ref:`延迟加载（按需） <frontend/assets/lazy_loading>`。
+
+ 类型
 ===========
 
-There are three different asset types: code (`js` files), style (`css` or `scss`
-files) and templates (`xml` files).
+共有三种不同的资产类型：代码（`js`文件）、样式（`css`或`scss` 文件）和模板（`xml`文件）。
 
-Code
-    Odoo supports :ref:`three different kinds of javascript files<frontend/js_modules>`.
-    All these files are then processed (native JS modules are transformed into odoo
-    modules), then minified (if not in `debug=assets` :ref:`mode <frontend/framework/assets_debug_mode>`)
-    and concatenated. The result is then saved as a file attachment. These file
-    attachments are usually loaded via a `<script>` tag in the `<head>` part of
-    the page (as a static file).
+代码
+    Odoo 支持:ref:`三种不同的 javascript 文件<frontend/js_modules>`。
+    然后处理所有这些文件（原生 JS 模块转换为 odoo 模块），然后缩小（如果不在`debug=assets` :ref:`mode <frontend/framework/assets_debug_mode>`中）并连接。
+    然后将结果保存为文件附件。这些文件附件通常通过页面部分中的`<script>`标签加载`<head>`（作为静态文件）。
 
-Style
+样式
     Styling can be done with either `css` or `scss <https://sass-lang.com/>`_. Like
     the javascript files, these files are processed (`scss` files are converted into
     `css`), then minified (again, if not in `debug=assets` :ref:`mode <frontend/framework/assets_debug_mode>`)
